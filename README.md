@@ -1,4 +1,4 @@
-# 🍓 Marquesitas App
+#  Marquesitas App
 
 ✨ Aplicación web para la gestión de pedidos de marquesitas, diseñada para automatizar la atención al cliente, organizar pedidos y calcular ventas en tiempo real.
 
