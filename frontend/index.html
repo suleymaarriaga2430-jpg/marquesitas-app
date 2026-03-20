@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <title>Marquesitas App</title>
   <link rel="stylesheet" href="styles.css">
+
+  <!-- 🔒 PROTECCIÓN -->
+  <script>
+    if(localStorage.getItem("logueado") !== "true"){
+      window.location.href = "login.html";
+    }
+  </script>
+
 </head>
 
 <body>
@@ -13,11 +21,14 @@
   <!-- NAVBAR -->
 <div class="navbar">
   <div style="display:flex; align-items:center; gap:10px;">
-           <img src="Imagen2.png" width="120">
+    <img src="Imagen2.png" width="120">
     <img src="Imagen1.png" width="350">
   </div>
 
   <span>Total: $<span id="totalDia">0</span></span>
+
+  <!-- 🔓 BOTÓN LOGOUT -->
+  <button onclick="logout()" style="margin-left:20px;">Cerrar sesión</button>
 </div>
 
   <!-- CONTENIDO -->
@@ -44,15 +55,22 @@
     </div>
 
     <div class="chatbot">
-  <h3>💬 Chatbot</h3>
-  <div id="chatbox"></div>
-  <input id="mensaje" placeholder="Escribe aquí...">
-  <button onclick="enviar()">Enviar</button>
-</div>
+      <h3>💬 Chatbot</h3>
+      <div id="chatbox"></div>
+      <input id="mensaje" placeholder="Escribe aquí...">
+      <button onclick="enviar()">Enviar</button>
+    </div>
 
   </div>
 
 </div>
+
+<script>
+function logout(){
+  localStorage.removeItem("logueado");
+  window.location.href = "login.html";
+}
+</script>
 
 <script src="app.js"></script>
 
